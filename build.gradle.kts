@@ -2,7 +2,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 /**
-  NOTE use the project git@github.com:adligo/2022.git to build this
+  NOTE use the project git@github.com:adligo/2022.adligo.org.git to build this
 */
 
 plugins {
