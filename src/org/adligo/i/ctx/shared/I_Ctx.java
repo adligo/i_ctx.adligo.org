@@ -5,9 +5,25 @@ package org.adligo.i.ctx.shared;
  * Contextualtian patterns.  This interface should be use for Libraries 
  * and Tools that are intended to transpile to Javascript / Typescript using JSweets;
  *   Also this should be the root context for JME /  CLDC, MEEP, MIDP Systems.
- *    
+ *   Finally this interface MAY eventually be use for some GWT JSNI compliation,
+ *  however the overrides in I_JseCtx should be preferred for most GWT Systems.
  * @author scott
  *
+ * ---------------- Apache ICENSE-2.0 --------------------------
+ *
+ * Copyright 2022 Adligo Inc
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+*    http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 public interface I_Ctx {
 
@@ -24,9 +40,11 @@ public interface I_Ctx {
   
   /**
    * This method obtains the current instance of a Contextualtian
-   * a design pattern simmilar to a Singleton, with the main difference
+   * a design pattern similar to a Singleton, with the main difference
    * being there could potentially be multiple contexts per System 
-   * or JVM.
+   * or JVM.  If a instance 
+   * of the Class doesn't exist then one should be created using 
+   * the create method above.
    *  
    * @param name
    * @return
