@@ -2,13 +2,15 @@ package org.adligo.i.ctx.shared;
 
 /**
  * This represents a root context that can be use for the Context Creation and
- * Contextualtian patterns.  This interface should be use for Libraries 
+ * Contextualtian patterns.  These patterns allow stubbing with tools like;
+ * {@link <a href="https://github.com/adligo/mockito_ext.adligo.org">mockito_ext.adligo.org</a>}
+ * This interface should be use for Libraries <br/><br/>
  * and Tools that are intended to transpile to Javascript / Typescript using JSweets;
  *   Also this should be the root context for JME /  CLDC, MEEP, MIDP Systems.
  *   Finally this interface MAY eventually be use for some GWT JSNI compliation,
- *  however the overrides in I_JseCtx should be preferred for most GWT Systems.
- * @author scott
- *
+ *  however the overrides in I_JseCtx should be preferred for most GWT Systems.<br/><br/>
+ * @author scott<br/><br/>
+ * <pre><code>
  * ---------------- Apache ICENSE-2.0 --------------------------
  *
  * Copyright 2022 Adligo Inc
@@ -24,6 +26,7 @@ package org.adligo.i.ctx.shared;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ * </code><pre>
  */
 public interface I_Ctx {
 
@@ -37,7 +40,7 @@ public interface I_Ctx {
    * @return
    */
   public Object create(String name);
-  
+
   /**
    * This method obtains the current instance of a Contextualtian
    * a design pattern similar to a Singleton, with the main difference
@@ -50,4 +53,11 @@ public interface I_Ctx {
    * @return
    */
   public Object get(String name);
+
+  /**
+   * This will almost always return the {@link System#currentTimeMillis()},
+   * unless you have stubbed it with something like mockito_ext.adligo.org :)
+   * @return
+   */
+  public long getTime();
 }
