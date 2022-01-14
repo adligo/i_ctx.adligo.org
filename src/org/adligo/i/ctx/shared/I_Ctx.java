@@ -43,8 +43,8 @@ public interface I_Ctx {
   /**
    * This method creates a new instance of the Java Class clazz It MAY use any
    * implementation however the common patterns include;
-   * 
-   * The contexts
+   * <b>1) Functional Context Creation<br/>
+   * 2) Reflection</b><br/>
    * 
    * @param <T>
    * @param clazz
