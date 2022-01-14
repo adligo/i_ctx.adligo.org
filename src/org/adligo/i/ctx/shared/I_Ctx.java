@@ -70,4 +70,39 @@ public interface I_Ctx {
    * @return
    */
   public long getTime();
+  
+  /**
+   *   This provides a common place to handle Exceptions and other Errors.
+   * Also NOT that since Contexts MAY wrap other Contexts, this has the ability to
+   * be scoped to a particular Object or set of methods etc.<br/>
+   *   Finally a quick note on Exception handling, the following blocks of code
+   *  are examples of ANTIPATTERNS;<br/>
+   *  <pre><code>
+   *    try {
+   *      //do something
+   *    } catch (Exception x) {
+   *       ctx.handle(x);
+   *    }
+   *    try {
+   *      //do something
+   *    } catch (Throwable x) {
+   *       ctx.handle(x);
+   *    }
+   *  </code></pre><br/>
+   *   Only {@link RuntimeException} should be caught in the following manor,
+   *  which ensures that any Checked Exceptions.
+   *   (i.e. {@link InterruptedException}
+   *  can be handled appropriatly;<br/>
+   * {@link <a href="https://www.baeldung.com/java-interrupted-exception">ttps://www.baeldung.com/java-interrupted-exception</a>}
+   *  <pre><code><
+   *    try {
+   *      //do something
+   *    } catch (RuntimeException x) {
+   *       ctx.handle(x);
+   *    }tx.handle(x);
+   *    }
+   *  </code></pre><br/>
+   * @param t
+   */
+  public void handle(Throwable t);
 }
