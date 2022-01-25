@@ -12,13 +12,6 @@ plugins {
   signing
 }
 
-sourceSets {
-  main {
-    java {
-      srcDirs("src")
-    }
-  }
-}
 
 fun getProp(key: String, default: String): String {
   var r : String = default
