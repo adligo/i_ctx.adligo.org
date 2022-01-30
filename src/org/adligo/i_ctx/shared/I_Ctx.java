@@ -1,4 +1,4 @@
-package org.adligo.i.ctx.shared;
+package org.adligo.i_ctx.shared;
 
 /**
  * This represents a root context that can be use for the Context Creation and

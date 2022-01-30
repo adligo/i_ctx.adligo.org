@@ -24,6 +24,6 @@
  * limitations under the License.
  * </code><pre>
  */
-module org.adligo.i.ctx {
-  exports org.adligo.i.ctx.shared;
+module org.adligo.i_ctx {
+  exports org.adligo.i_ctx.shared;
 }
