@@ -52,7 +52,7 @@ tasks.jar {
 publishing {
   publications {
     create<MavenPublication>("maven") {
-      groupId = "org.adligo.jse6-core"
+      groupId = "org.adligo.jse7-core"
       artifactId = "i_ctx"
       version = getTag()
       from(components["java"])
